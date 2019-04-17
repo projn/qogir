@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package rpc;
+
+service GrpcService {
+  rpc execute (GrpcRequestMsgInfo) returns (GrpcResponseMsgInfo) {}
+}
+
+message GrpcRequestMsgInfo {
+  string serviceName = 1;
+  string requestBody = 2;
+}
+
+message GrpcResponseMsgInfo {
+  string responseBody = 1;
+}
+
